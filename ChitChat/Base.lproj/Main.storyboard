@@ -52,12 +52,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="615" y="-628"/>
+            <point key="canvasLocation" x="879" y="-655"/>
         </scene>
         <!--Topics View Controller-->
         <scene sceneID="cM3-XA-9G7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JA5-a0-3GL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="vbW-0D-8wF" customClass="TopicsViewController" customModule="ChitChat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lUk-ZO-fqi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
@@ -68,7 +67,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YEq-0e-Ul4" id="TNk-pK-Rg7">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="78v-YG-o31">
@@ -104,7 +103,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WLC-c5-U3a" id="bgA-Xu-eRY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezj-n7-Bwb">
@@ -132,15 +131,16 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JA5-a0-3GL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1358" y="-628"/>
+            <point key="canvasLocation" x="1730" y="-637"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kJa-KO-EPf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QNG-dD-K06" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CPh-BP-2Gg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CPh-BP-2Gg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.01176470588" green="0.60784313729999995" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -152,7 +152,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVt-JY-VQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-266" y="-628"/>
+            <point key="canvasLocation" x="220" y="-655"/>
         </scene>
         <!--Email View Controller-->
         <scene sceneID="Pce-2k-tuo">
@@ -240,9 +240,15 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="kvA-C1-42s" customClass="GIDSignInButton">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="kvA-C1-42s" firstAttribute="centerY" secondItem="WWb-jS-Nq0" secondAttribute="centerY" id="4He-FZ-M9T"/>
+                            <constraint firstItem="kvA-C1-42s" firstAttribute="centerX" secondItem="WWb-jS-Nq0" secondAttribute="centerX" id="H0k-9k-MH4"/>
                             <constraint firstItem="ObP-uJ-FWZ" firstAttribute="width" secondItem="WWb-jS-Nq0" secondAttribute="width" multiplier="0.5" id="HaW-7V-0ll"/>
                             <constraint firstItem="ObP-uJ-FWZ" firstAttribute="centerX" secondItem="WWb-jS-Nq0" secondAttribute="centerX" id="eS0-XY-iW2"/>
                             <constraint firstItem="ObP-uJ-FWZ" firstAttribute="top" secondItem="KcC-LY-XIi" secondAttribute="bottom" constant="8" id="pu7-0o-HKc"/>
@@ -252,6 +258,7 @@
                     <connections>
                         <outlet property="dialogView" destination="DyA-Ks-jhX" id="k9B-ba-Toa"/>
                         <outlet property="email" destination="8sM-UM-Y9R" id="Z1g-PE-XR6"/>
+                        <outlet property="googleSignInButton" destination="kvA-C1-42s" id="Px1-GN-ywf"/>
                         <outlet property="label" destination="zOp-yo-LMI" id="eBT-Dt-6qt"/>
                         <outlet property="password" destination="Rzf-5L-EkY" id="Fkl-mY-1BG"/>
                         <outlet property="rocketImage" destination="EPB-mR-DBe" id="gJz-DL-jqX"/>
@@ -259,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJ9-xw-jQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1552.8" y="-1317.3913043478262"/>
+            <point key="canvasLocation" x="2002" y="-1453"/>
         </scene>
         <!--Email-->
         <scene sceneID="JNf-1W-DZO">
@@ -267,7 +274,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LfN-Pp-J45" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Email" id="XNc-sc-cUG"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZC5-V1-lqE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ZC5-V1-lqE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.01176470588" green="0.60784313729999995" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

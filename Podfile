@@ -9,6 +9,9 @@ target 'ChitChat' do
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
-    
+    pod 'GoogleSignIn'
+    pod 'JSQMessagesViewController'
+    # https://github.com/MessageKit/MessageKit
+    # pod 'MessageKit'
 
 end

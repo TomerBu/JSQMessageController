@@ -15,7 +15,7 @@ class TopicsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.rowHeight = 60
+        tableView.rowHeight = 60
         Database.database().reference(withPath: "Topics").observe(.childAdded, with: { (snapshot) in
             guard let topic = snapshot.value as? String else{
                 return

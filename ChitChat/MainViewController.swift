@@ -8,17 +8,19 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
 class MainViewController: UIViewController {
     
-    @IBAction func signOut(_ sender: Any) {
-        do{
-            try Auth.auth().signOut()
-        }
-        catch let error{
-            print(error)
-        }
+@IBAction func signOut(_ sender: Any) {
+    do{
+        try Auth.auth().signOut()
+        GIDSignIn.sharedInstance().signOut()
     }
+    catch let error{
+        print(error)
+    }
+}
     
     var handle: AuthStateDidChangeListenerHandle?
     

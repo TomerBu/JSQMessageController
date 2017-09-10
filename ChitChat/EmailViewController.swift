@@ -8,8 +8,18 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
+import GoogleSignIn
 
 class EmailViewController: UIViewController {
+
+    @IBOutlet weak var googleSignInButton: GIDSignInButton!{
+        didSet{
+            GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+            GIDSignIn.sharedInstance().delegate = self
+            GIDSignIn.sharedInstance().uiDelegate = self
+        }
+    }
     @IBOutlet weak var dialogView: UIView!
     @IBOutlet weak var label: UILabel!
     
@@ -32,7 +42,7 @@ class EmailViewController: UIViewController {
     @IBAction func create(_ sender: UIButton) {
         logOrSign(choice: .CrateUser)
     }
-
+    
     func logOrSign(choice: LoginOrSign){
         let e =  email.text ?? ""
         let pass =  password.text ?? ""
@@ -123,4 +133,38 @@ class EmailViewController: UIViewController {
      }
      */
     
+}
+extension EmailViewController : GIDSignInUIDelegate, GIDSignInDelegate{
+    // The sign-in flow has finished and was successful if |error| is |nil|.
+    func sign(_ signIn: GIDSignIn!,
+              didSignInFor user: GIDGoogleUser!, withError error: Error!){
+        if let error = error{
+            print(error)
+            return
+        }
+        let auth = user.authentication
+        let idToken = auth?.idToken ?? ""
+        let userAccessToken = auth?.accessToken ?? ""
+        // GIDSignIn.sharedInstance().signIn
+        let authCredential =  GoogleAuthProvider.credential(
+            withIDToken: idToken, accessToken: userAccessToken
+        )
+        
+        Auth.auth().signIn(with: authCredential) { (user, error) in
+            if let error = error{
+                self.showError(message: error.localizedDescription)
+                return
+            }
+            if let _ = user{
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    
+    // Finished disconnecting |user| from the app successfully if |error| is |nil|.
+    func sign(_ signIn: GIDSignIn!,
+              didDisconnectWith user: GIDGoogleUser!, withError error: Error!){
+        print("Diconnected")
+    }
 }
