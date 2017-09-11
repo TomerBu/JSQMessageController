@@ -11,15 +11,13 @@ import FirebaseDatabase
 
 class TopicsViewController: UITableViewController {
     
-    var topics = [String]()
+    var topics = [Topic]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 60
         Database.database().reference(withPath: "Topics").observe(.childAdded, with: { (snapshot) in
-            guard let topic = snapshot.value as? String else{
-                return
-            }
+            guard let topic = Topic(snapshot: snapshot) else {return}
             
             self.topics.append(topic)
             let indexPath = IndexPath(row: self.topics.count - 1, section: 1)
@@ -35,7 +33,7 @@ class TopicsViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,14 +57,22 @@ class TopicsViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell", for: indexPath) as! TopicCell
         let topic = topics[indexPath.row]
-        cell.topicLabel.text = topic
+        cell.topicLabel.text = topic.name
         return cell
     }
-   
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        let topic = topics[indexPath.row]
+        performSegue(withIdentifier: "goChat", sender: topic)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dest = segue.destination as? ChatViewController, let topic = sender as? Topic else {
+            return
+        }
+        
+        dest.topic = topic
+    }
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

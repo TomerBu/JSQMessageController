@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Topics-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="ChitChat" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                             <constraint firstItem="M1h-rq-t41" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dP5-KA-mJH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Rfs-aN-d41">
+                    <navigationItem key="navigationItem" title="Topics" id="Rfs-aN-d41">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-door" id="Wyp-rV-EYE">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879" y="-655"/>
+            <point key="canvasLocation" x="1273" y="-621"/>
         </scene>
         <!--Topics View Controller-->
         <scene sceneID="cM3-XA-9G7">
@@ -130,10 +130,32 @@
                             <outlet property="delegate" destination="vbW-0D-8wF" id="UU7-hU-zZO"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="XLu-Ap-uWe" kind="show" identifier="goChat" id="ww7-iW-ZbV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JA5-a0-3GL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1730" y="-637"/>
+            <point key="canvasLocation" x="1273" y="116"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="1hh-5D-5Xh">
+            <objects>
+                <viewController id="XLu-Ap-uWe" customClass="ChatViewController" customModule="ChitChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Jl-ym-Xs7"/>
+                        <viewControllerLayoutGuide type="bottom" id="m0f-FA-liQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MbK-xO-CAA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chat" id="YhM-VD-NzL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lh1-Ha-3E3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2314" y="-650"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kJa-KO-EPf">
@@ -144,6 +166,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.01176470588" green="0.60784313729999995" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -154,7 +179,7 @@
             </objects>
             <point key="canvasLocation" x="220" y="-655"/>
         </scene>
-        <!--Email View Controller-->
+        <!--Login-->
         <scene sceneID="Pce-2k-tuo">
             <objects>
                 <viewController id="Ldi-PR-3s1" customClass="EmailViewController" customModule="ChitChat" customModuleProvider="target" sceneMemberID="viewController">
@@ -254,7 +279,7 @@
                             <constraint firstItem="ObP-uJ-FWZ" firstAttribute="top" secondItem="KcC-LY-XIi" secondAttribute="bottom" constant="8" id="pu7-0o-HKc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LpR-4T-bpK"/>
+                    <navigationItem key="navigationItem" title="Login" id="LpR-4T-bpK"/>
                     <connections>
                         <outlet property="dialogView" destination="DyA-Ks-jhX" id="k9B-ba-Toa"/>
                         <outlet property="email" destination="8sM-UM-Y9R" id="Z1g-PE-XR6"/>
@@ -266,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJ9-xw-jQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2002" y="-1453"/>
+            <point key="canvasLocation" x="1231" y="-1327"/>
         </scene>
         <!--Email-->
         <scene sceneID="JNf-1W-DZO">
@@ -286,7 +311,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIg-CL-ISI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866" y="-1327"/>
+            <point key="canvasLocation" x="220" y="-1327"/>
         </scene>
     </scenes>
     <resources>

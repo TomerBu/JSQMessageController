@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		362EB7361F6535800016279D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362EB7351F6535800016279D /* ChatViewController.swift */; };
+		362EB7381F6552A70016279D /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362EB7371F6552A70016279D /* Topic.swift */; };
 		364AEC251F611AF4009BC686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364AEC241F611AF4009BC686 /* AppDelegate.swift */; };
 		364AEC271F611AF4009BC686 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364AEC261F611AF4009BC686 /* MainViewController.swift */; };
 		364AEC2A1F611AF4009BC686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364AEC281F611AF4009BC686 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		362EB7351F6535800016279D /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		362EB7371F6552A70016279D /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		364AEC211F611AF4009BC686 /* ChitChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChitChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		364AEC241F611AF4009BC686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		364AEC261F611AF4009BC686 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 				364AEC3C1F6127A4009BC686 /* supporting files */,
 				364AEC3B1F612792009BC686 /* layout */,
 				364AEC3A1F612781009BC686 /* controllers */,
+				362EB7371F6552A70016279D /* Topic.swift */,
 			);
 			path = ChitChat;
 			sourceTree = "<group>";
@@ -84,6 +89,7 @@
 				364AEC261F611AF4009BC686 /* MainViewController.swift */,
 				364AEC381F61277A009BC686 /* EmailViewController.swift */,
 				364AEC3D1F6170FF009BC686 /* TopicsViewController.swift */,
+				362EB7351F6535800016279D /* ChatViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -275,7 +281,9 @@
 				364AEC271F611AF4009BC686 /* MainViewController.swift in Sources */,
 				364AEC421F6173B9009BC686 /* TopicCell.swift in Sources */,
 				364AEC391F61277A009BC686 /* EmailViewController.swift in Sources */,
+				362EB7361F6535800016279D /* ChatViewController.swift in Sources */,
 				364AEC401F617397009BC686 /* AddTopicCell.swift in Sources */,
+				362EB7381F6552A70016279D /* Topic.swift in Sources */,
 				364AEC3E1F6170FF009BC686 /* TopicsViewController.swift in Sources */,
 				364AEC251F611AF4009BC686 /* AppDelegate.swift in Sources */,
 			);
